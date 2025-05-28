@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-24.04
     env:
       # Set docker repo to either the fork or the main repo where the branch exists
-      DOCKER_REPO: leonardocaylent/${{ github.repository }}
+      DOCKER_REPO: leonardoquatrocchi/atlantis
       # Push if not a pull request and references the main branch
       PUSH: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/')) }}
 
@@ -139,7 +139,7 @@ jobs:
     - name: Login to Packages Container registry
       uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3
       with:
-        registry: ghcr.io
+        registry: leonardoquatrocchi/atlantis
         username: ${{ github.actor }}
         password: ${{ secrets.DOCKER_TOKEN }}
 

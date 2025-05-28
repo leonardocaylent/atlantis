@@ -140,7 +140,7 @@ jobs:
       uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 # v3
       with:
         registry: docker.io/leonardoquatrocchi/atlantis
-        username: ${{ github.actor }}
+        username: leonardoquatrocchi
         password: ${{ secrets.DOCKER_TOKEN }}
 
     # Publish release to container registry
